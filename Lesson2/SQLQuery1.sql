@@ -33,7 +33,7 @@ GO
 
 INSERT INTO Product
 VALUES
-('Корона', 'AK-53818', '5', '50', '08/15/2011'),
+('Корона', 'AK-53818', '$5', '50', '08/15/2011'),
 ('Милка', 'AM-51122', '6.1', '50', '07/15/2011'),
 ('Аленка', 'AA-52211', '2.5', '20', '06/15/2011'),
 ('Snickers', 'BS-32118', '2.8', '50', '08/15/2011'),
@@ -53,3 +53,17 @@ WHERE [Cost,$] > 3 AND SellStartDate >= '08/20/2011'
 UPDATE Product
 SET [Cost,$] = ([Cost,$]+0.25)
 WHERE [Name] = 'Свиточ'
+
+CREATE TABLE Customers
+(
+CustomerNo int identity Not Null,
+FName nvarchar(15) Not Null,
+LName nvarchar(15) Not Null,
+MName nvarchar(15) Null,
+Adress1 nvarchar(50) Not Null,
+Adress2 nvarchar(50) Null,
+City nchar(10) Not Null,
+Phone char(12) Not Null,
+DateInSystem date Null
+)
+GO
